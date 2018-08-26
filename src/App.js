@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import EditingPage from './pages/editing/EditingPage';
 import Preview from './pages/preview/Preview';
