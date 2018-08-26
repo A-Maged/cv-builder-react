@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const DeveloperTemplate = props => {
-   console.log(props);
-
    return (
       <div className="template developer-1">
          <div className="developer-1__header">
