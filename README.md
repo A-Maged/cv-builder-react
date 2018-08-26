@@ -1,1 +1,1 @@
-## a visual cv builder similar to visualcv.com (in progress)
+## a visual cv builder similar to visualcv.com (still hacking it together)
