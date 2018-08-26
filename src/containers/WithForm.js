@@ -17,6 +17,12 @@ class WithForm extends Component {
    }
 }
 
+// const WithForm = WrappedComponent => props => {
+// 	return (
+// 		<WrappedComponent {...props} />
+// 	)
+// }
+
 const mapStateToProps = state => {
    return {
       name: state.form.name,
