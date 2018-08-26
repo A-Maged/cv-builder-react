@@ -10,12 +10,17 @@ import './App.css';
 
 const Fragment = React.Fragment;
 
+const baseUrl =
+   document.location.hostname.search('github') === 0
+      ? 'https://a-maged.github.io/cv-builder-react'
+      : '';
+
 const Nav = (
    <div className="nav">
-      <NavLink exact to="/" activeClassName="active">
+      <NavLink exact to={`${baseUrl}/`} activeClassName="active">
          editor
       </NavLink>
-      <NavLink to="/preview" activeClassName="active">
+      <NavLink to={`${baseUrl}/preview`} activeClassName="active">
          preview
       </NavLink>
    </div>
