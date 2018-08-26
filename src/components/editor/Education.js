@@ -1,18 +1,18 @@
 import React from 'react';
 import WithForm from '../../containers/WithForm';
 
-export default function Education() {
+function Education(props) {
    return (
-      <WithForm>
-         {props => (
-            <textarea
-               onChange={props.educationChanged}
-               value={props.education}
-               className="form__education"
-               placeholder="education"
-               type="text"
-            />
-         )}
-      </WithForm>
+      <React.Fragment>
+         <textarea
+            onChange={props.educationChanged}
+            value={props.education}
+            className="form__education"
+            placeholder="education"
+            type="text"
+         />
+      </React.Fragment>
    );
 }
+
+export default WithForm(Education);

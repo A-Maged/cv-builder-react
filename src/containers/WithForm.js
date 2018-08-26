@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 
 import {
@@ -11,17 +12,19 @@ import {
    formWebsiteChanged
 } from '../redux/actions/actionCreators';
 
-class WithForm extends Component {
-   render() {
-      return <div className="form">{this.props.children(this.props)}</div>;
-   }
-}
-
-// const WithForm = WrappedComponent => props => {
-// 	return (
-// 		<WrappedComponent {...props} />
-// 	)
+// class WithForm extends Component {
+//    render() {
+//       return <div className="form">{this.props.children(this.props)}</div>;
+//    }
 // }
+
+const WithForm = WrappedComponent => {
+   return class extends Component {
+      render() {
+         return <WrappedComponent {...this.props} />;
+      }
+   };
+};
 
 const mapStateToProps = state => {
    return {
@@ -47,7 +50,10 @@ const mapDispatchToProps = dispatch => {
    };
 };
 
-export default connect(
-   mapStateToProps,
-   mapDispatchToProps
-)(WithForm);
+export default compose(
+   connect(
+      mapStateToProps,
+      mapDispatchToProps
+   ),
+   WithForm
+);
