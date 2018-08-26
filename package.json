@@ -1,8 +1,8 @@
 {
    "name": "cv-builder-react",
    "version": "0.1.0",
-   "homepage": "https://a-maged.github.io/cv-builder-react/",
    "private": true,
+   "homepage": "https://a-maged.github.io/cv-builder-react/",
    "dependencies": {
       "react": "^16.4.2",
       "react-dom": "^16.4.2",
