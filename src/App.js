@@ -11,7 +11,7 @@ import './App.css';
 const Fragment = React.Fragment;
 
 const baseUrl =
-   document.location.hostname.search('github') === 0
+   document.location.hostname.search('github') > -1
       ? 'https://a-maged.github.io/cv-builder-react'
       : '';
 
