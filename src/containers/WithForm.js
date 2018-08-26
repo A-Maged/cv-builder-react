@@ -12,12 +12,6 @@ import {
    formWebsiteChanged
 } from '../redux/actions/actionCreators';
 
-// class WithForm extends Component {
-//    render() {
-//       return <div className="form">{this.props.children(this.props)}</div>;
-//    }
-// }
-
 const WithForm = WrappedComponent => {
    return class extends Component {
       render() {
