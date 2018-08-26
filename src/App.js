@@ -15,6 +15,12 @@ const baseUrl =
       ? 'https://a-maged.github.io/cv-builder-react'
       : '';
 
+console.log(
+   'baseUrl: ' + baseUrl,
+   'search: ' + document.location.hostname.search('github'),
+   'hostname: ' + document.location.hostname
+);
+
 const Nav = (
    <div className="nav">
       <NavLink exact to={`${baseUrl}/`} activeClassName="active">
