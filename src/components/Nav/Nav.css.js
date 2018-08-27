@@ -7,7 +7,7 @@ export const nav = css`
    top: 0;
    left: 0;
    width: 100%;
-   border: 1px solid #eee;
+   border-bottom: 1px solid #eee;
 
    a {
       padding: 20px;
