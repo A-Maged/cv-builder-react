@@ -6,14 +6,14 @@ import Routes from './Routes';
 import Nav from './components/Nav';
 import store from './redux/store';
 import './styles/bootstrap-grid-only-12.css';
-import './styles/App.css';
+import AppCss from './styles/App.css';
 
 class App extends Component {
    render() {
       return (
          <Provider store={store}>
             <Router>
-               <div className="app">
+               <div styleName="AppCss.app">
                   <div className="page">
                      <Routes />
                   </div>

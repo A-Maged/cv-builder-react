@@ -24,6 +24,10 @@ a {
    color: #333;
 }
 
+.app {
+   background-color: red;
+}
+
 .nav {
    padding: 0 40px;
    background-color: white;
