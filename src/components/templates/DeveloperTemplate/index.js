@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as styles from './DeveloperTemplate.css';
+
 const DeveloperTemplate = props => {
    return (
-      <div className="template developer-1">
-         <div className="developer-1__header">
+      <div className={`template  ${styles.developer_1}`}>
+         <div className={styles.header}>
             <div className="template__name">{props.name || 'no name'}</div>
             <div className="template__email">{props.email || 'no email'}</div>
             <div className="template__phone">{props.phone || 'no phone'}</div>

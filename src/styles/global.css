@@ -1,0 +1,41 @@
+body {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 100;
+   background-color: #eee;
+   color: #333;
+   margin: 0;
+   padding: 0;
+   height: 100vh;
+   position: relative;
+   margin-top: 90px;
+}
+
+a {
+   color: initial;
+   display: inline-block;
+   text-decoration: none;
+}
+
+[class*='form__'] {
+   display: block;
+   width: 100%;
+   margin: 15px 0;
+   padding: 10px;
+   color: #333;
+}
+
+.select-template {
+   display: inline-block;
+   padding: 15px;
+}
+
+.select-template h4 {
+   text-transform: uppercase;
+}
+
+.select-template img {
+   display: inline-block;
+   margin-bottom: 40px;
+}
+.preview {
+}

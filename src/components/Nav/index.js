@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import * as styles from './Nav.css';
+
 const Nav = () => {
    return (
-      <div className="nav">
+      <div className={styles.nav}>
          <NavLink exact to="/" activeClassName="active">
             editor
          </NavLink>
