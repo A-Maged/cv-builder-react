@@ -23,15 +23,3 @@ a {
    padding: 10px;
    color: #333;
 }
-
-.select-template {
-}
-
-.select-template h4 {
-   text-transform: uppercase;
-}
-
-.select-template img {
-   display: inline-block;
-   margin-bottom: 40px;
-}
