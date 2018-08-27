@@ -1,5 +1,6 @@
 import React from 'react';
 import Editor from '../../components/editor';
+import SelectTemplate from '../../components/editor/SelectTemplate';
 
 const EditingPage = () => {
    return (
@@ -10,12 +11,7 @@ const EditingPage = () => {
          <div className="select-template col-sm-8">
             <h4>select template</h4>
             <div className="row">
-               {/* dummy data */}
-               <img className="col-sm-4" src="/images/brooklyn.jpeg" alt="" />
-               <img className="col-sm-4" src="/images/brooklyn.jpeg" alt="" />
-               <img className="col-sm-4" src="/images/brooklyn.jpeg" alt="" />
-               <img className="col-sm-4" src="/images/brooklyn.jpeg" alt="" />
-               <img className="col-sm-4" src="/images/brooklyn.jpeg" alt="" />
+               <SelectTemplate styleClasses="col-sm-4 col-xs-6" />
             </div>
          </div>
       </div>

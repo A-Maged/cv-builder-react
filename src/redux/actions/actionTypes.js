@@ -5,3 +5,4 @@ export const formSummaryChanged = '[FORM] SUMMARY_CHANGED';
 export const formEducationChanged = '[FORM] EDUCATION_CHANGED';
 export const formLocationChanged = '[FORM] LOCATION_CHANGED';
 export const formWebsiteChanged = '[FORM] WEBSITE_CHANGED';
+export const formSelectedTemplateChanged = '[FORM] SELECTED_TEMPLATE_CHANGED';

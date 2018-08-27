@@ -9,11 +9,15 @@ import {
    formSummaryChanged,
    formEducationChanged,
    formLocationChanged,
-   formWebsiteChanged
+   formWebsiteChanged,
+   formSelectedTemplateChanged
 } from '../redux/actions/actionCreators';
 
 const WithForm = WrappedComponent => {
    return class extends Component {
+      static displayName = `WithForm(${WrappedComponent.displayName ||
+         WrappedComponent.name})`;
+
       render() {
          return <WrappedComponent {...this.props} />;
       }
@@ -28,7 +32,8 @@ const mapStateToProps = state => {
       summary: state.form.summary,
       education: state.form.education,
       location: state.form.location,
-      website: state.form.website
+      website: state.form.website,
+      selectedTemplate: state.form.selectedTemplate
    };
 };
 
@@ -40,7 +45,11 @@ const mapDispatchToProps = dispatch => {
       summaryChanged: e => dispatch(formSummaryChanged(e.target.value)),
       educationChanged: e => dispatch(formEducationChanged(e.target.value)),
       locationChanged: e => dispatch(formLocationChanged(e.target.value)),
-      websiteChanged: e => dispatch(formWebsiteChanged(e.target.value))
+      websiteChanged: e => dispatch(formWebsiteChanged(e.target.value)),
+      selectedTemplateChanged: e =>
+         dispatch(
+            formSelectedTemplateChanged(e.target.getAttribute('template-id'))
+         )
    };
 };
 

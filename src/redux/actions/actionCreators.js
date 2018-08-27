@@ -34,3 +34,10 @@ export const formWebsiteChanged = value => ({
    type: actionTypes.formWebsiteChanged,
    value
 });
+
+export const formSelectedTemplateChanged = value => {
+   return {
+      type: actionTypes.formSelectedTemplateChanged,
+      value
+   };
+};
