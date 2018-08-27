@@ -1,4 +1,5 @@
 import DeveloperTemplate from './DeveloperTemplate';
+import AccountantTemplate from './AccountantTemplate';
 
 // shuold come from server
 export default [
@@ -9,7 +10,7 @@ export default [
    },
    {
       id: '2',
-      template: DeveloperTemplate,
-      imageUrl: '/images/brooklyn.jpeg'
+      template: AccountantTemplate,
+      imageUrl: '/images/chloe.jpeg'
    }
 ];

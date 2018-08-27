@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import store from '../../redux/store';
-import DeveloperTemplate from '../../components/templates/DeveloperTemplate';
+import templates from '../../components/templates/';
 
-const Preview = () => {
-   const { form } = store.getState();
+class Preview extends Component {
+   render() {
+      const { form } = store.getState();
 
-   return (
-      <div className="preview">
-         <DeveloperTemplate {...form} />
-      </div>
-   );
-};
+      const SelectedTemplate =
+         (templates[form.selectedTemplate] &&
+            templates[form.selectedTemplate].template) ||
+         templates[0].template;
+
+      return (
+         <div className="preview">
+            <SelectedTemplate {...form} />
+         </div>
+      );
+   }
+}
 
 export default Preview;

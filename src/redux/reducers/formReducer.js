@@ -8,7 +8,7 @@ let initialState = {
    education: `graduated from M.I.T in 2018 with a GBA of 3.8`,
    location: 'united states, nyc',
    website: 'A-MAGED.GITHUB.IO/SLEEPCODING-BLOG/',
-   selectedTemplate: ''
+   selectedTemplate: '1'
 };
 
 export default function formReducer(state = initialState, action) {

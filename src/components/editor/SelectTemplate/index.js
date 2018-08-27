@@ -15,7 +15,7 @@ const SelectTemplate = props => {
                      onClick={props.selectedTemplateChanged}
                      className={props.styleClasses || 'col-xs-6  col-sm-4'}
                      key={uniqid()}
-                     template-id={template.id}
+                     template-id={parseInt(template.id, 10) - 1}
                      src={template.imageUrl}
                      alt=""
                   />

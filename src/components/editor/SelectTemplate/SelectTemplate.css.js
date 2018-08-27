@@ -9,5 +9,9 @@ export const selectTemplate = css`
    img {
       display: inline-block;
       margin-bottom: 40px;
+      cursor: pointer;
+      :hover {
+         outline: 5px solid blue;
+      }
    }
 `;
