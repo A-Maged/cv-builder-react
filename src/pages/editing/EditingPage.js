@@ -8,11 +8,8 @@ const EditingPage = () => {
          <div className="col-sm-4">
             <Editor />
          </div>
-         <div className="select-template col-sm-8">
-            <h4>select template</h4>
-            <div className="row">
-               <SelectTemplate styleClasses="col-sm-4 col-xs-6" />
-            </div>
+         <div className="col-sm-8">
+            <SelectTemplate styleClasses="col-xs-6  col-sm-4" />
          </div>
       </div>
    );
