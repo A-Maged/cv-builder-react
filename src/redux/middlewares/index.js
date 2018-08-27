@@ -1,4 +1,3 @@
-import React from 'react';
 import * as actionTypes from '../actions/actionTypes';
 
 const test = store => next => action => {
@@ -9,6 +8,9 @@ const test = store => next => action => {
 
 const redirect = store => next => action => {
    next(action);
+   if (action.type === actionTypes.formSelectedTemplateChanged) {
+      //
+   }
 };
 
 export default [test, redirect];
