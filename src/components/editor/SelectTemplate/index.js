@@ -10,12 +10,16 @@ const SelectTemplate = props => {
          <h4>select template</h4>
          <div className="row">
             {templates.map(template => {
+               let templateId = parseInt(template.id, 10) - 1;
+               let selectedTemplateId = parseInt(props.selectedTemplate, 10);
                return (
                   <img
                      onClick={props.selectedTemplateChanged}
-                     className={props.styleClasses || 'col-xs-6  col-sm-4'}
                      key={uniqid()}
-                     template-id={parseInt(template.id, 10) - 1}
+                     className={`${
+                        selectedTemplateId === templateId ? 'selected' : ''
+                     } ${props.styleClasses || 'col-xs-6  col-sm-4'}`}
+                     template-id={templateId}
                      src={template.imageUrl}
                      alt=""
                   />

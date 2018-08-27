@@ -10,8 +10,9 @@ export const selectTemplate = css`
       display: inline-block;
       margin-bottom: 40px;
       cursor: pointer;
-      :hover {
-         outline: 5px solid blue;
-      }
+      /* :hover, */
+   }
+   .selected {
+      outline: 5px solid blue;
    }
 `;

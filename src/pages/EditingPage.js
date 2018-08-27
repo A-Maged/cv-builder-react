@@ -1,6 +1,6 @@
 import React from 'react';
-import Editor from '../../components/editor';
-import SelectTemplate from '../../components/editor/SelectTemplate';
+import Editor from '../components/editor';
+import SelectTemplate from '../components/editor/SelectTemplate';
 
 const EditingPage = () => {
    return (

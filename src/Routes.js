@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import EditingPage from './pages/editing/EditingPage';
-import PreviewPage from './pages/preview/PreviewPage';
+import EditingPage from './pages/EditingPage';
+import PreviewPage from './pages/PreviewPage';
 
 const Routes = () => {
    return (

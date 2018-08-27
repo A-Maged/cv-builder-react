@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import store from '../../redux/store';
-import templates from '../../components/templates/';
+import store from '../redux/store';
+import templates from '../components/templates/';
 
 class Preview extends Component {
    render() {
