@@ -1,11 +1,12 @@
-import React from 'react';
-import WithForm from '../../containers/WithForm';
+import React, { Component } from 'react';
 
-const Fragment = React.Fragment;
+import WithForm from '../../../containers/WithForm';
+import * as styles from './Profile.css';
+import Modal from '../../Modal';
 
-function Profile(props) {
+const Form = props => {
    return (
-      <Fragment>
+      <div className="form">
          <input
             onChange={props.nameChanged}
             value={props.name}
@@ -45,8 +46,40 @@ function Profile(props) {
             placeholder="website"
             type="text"
          />
-      </Fragment>
+      </div>
    );
+};
+
+class Profile extends Component {
+   state = {
+      showForm: false
+   };
+
+   handleClick = () => {
+      this.setState({
+         showForm: !this.state.showForm
+      });
+   };
+
+   render() {
+      return (
+         <div className={styles.profile}>
+            <div onClick={this.handleClick} className="details">
+               {this.props.name + '  ' + this.props.email}
+            </div>
+            {this.state.showForm && (
+               <Modal classNames={styles.popup}>
+                  <Form {...this.props} />
+               </Modal>
+            )}
+         </div>
+      );
+   }
 }
+
+// ReactDOM.render(
+//    <Form {...this.props} showForm={this.state.showForm} />,
+//    document.querySelector('#popup')
+// );
 
 export default WithForm(Profile);
