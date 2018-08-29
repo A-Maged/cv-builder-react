@@ -7,14 +7,13 @@ class Preview extends Component {
    render() {
       const { form } = store.getState();
 
-      const SelectedTemplate =
-         (templates[form.selectedTemplate] &&
-            templates[form.selectedTemplate].template) ||
-         templates[0].template;
+      const SelectedTemplateComponent = templates.filter(
+         tmp => tmp.id === form.selectedTemplate
+      )[0].template;
 
       return (
          <div className="preview">
-            <SelectedTemplate {...form} />
+            <SelectedTemplateComponent {...form} />
          </div>
       );
    }

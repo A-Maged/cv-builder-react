@@ -1,7 +1,7 @@
 import DeveloperTemplate from './DeveloperTemplate';
 import AccountantTemplate from './AccountantTemplate';
 
-// shuold come from server
+// should come from server
 export default [
    {
       id: '1',
@@ -9,7 +9,7 @@ export default [
       imageUrl: '/images/brooklyn.jpeg'
    },
    {
-      id: '2',
+      id: '4',
       template: AccountantTemplate,
       imageUrl: '/images/chloe.jpeg'
    }
