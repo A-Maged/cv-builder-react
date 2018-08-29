@@ -2,16 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import {
-   formNameChanged,
-   formEmailChanged,
-   formPhoneChanged,
-   formSummaryChanged,
-   formEducationChanged,
-   formLocationChanged,
-   formWebsiteChanged,
-   formSelectedTemplateChanged
-} from '../redux/actions/actionCreators';
+import * as actionCreators from '../redux/actions/actionCreators';
 
 const WithForm = WrappedComponent => {
    return class extends Component {
@@ -39,16 +30,25 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
    return {
-      nameChanged: e => dispatch(formNameChanged(e.target.value)),
-      emailChanged: e => dispatch(formEmailChanged(e.target.value)),
-      phoneChanged: e => dispatch(formPhoneChanged(e.target.value)),
-      summaryChanged: e => dispatch(formSummaryChanged(e.target.value)),
-      educationChanged: e => dispatch(formEducationChanged(e.target.value)),
-      locationChanged: e => dispatch(formLocationChanged(e.target.value)),
-      websiteChanged: e => dispatch(formWebsiteChanged(e.target.value)),
+      nameChanged: e =>
+         dispatch(actionCreators.formNameChanged(e.target.value)),
+      emailChanged: e =>
+         dispatch(actionCreators.formEmailChanged(e.target.value)),
+      phoneChanged: e =>
+         dispatch(actionCreators.formPhoneChanged(e.target.value)),
+      summaryChanged: e =>
+         dispatch(actionCreators.formSummaryChanged(e.target.value)),
+      educationChanged: e =>
+         dispatch(actionCreators.formEducationChanged(e.target.value)),
+      locationChanged: e =>
+         dispatch(actionCreators.formLocationChanged(e.target.value)),
+      websiteChanged: e =>
+         dispatch(actionCreators.formWebsiteChanged(e.target.value)),
       selectedTemplateChanged: e =>
          dispatch(
-            formSelectedTemplateChanged(e.target.getAttribute('template-id'))
+            actionCreators.formSelectedTemplateChanged(
+               e.target.getAttribute('template-id')
+            )
          )
    };
 };
