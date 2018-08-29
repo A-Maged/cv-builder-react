@@ -72,6 +72,7 @@ class Profile extends Component {
             {this.state.showForm && (
                <Modal classNames="popup" onClose={this.closeModal}>
                   <Form {...this.props} />
+                  <button onClick={this.closeModal}>close</button>
                </Modal>
             )}
          </div>

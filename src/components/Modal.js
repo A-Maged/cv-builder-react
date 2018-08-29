@@ -47,8 +47,13 @@ const popup = css`
    right: 0;
    background-color: white;
    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
-   max-width: 400px;
+   min-width: 400px;
+   max-width: 50vw;
    padding: 15px;
+
+   @media (max-width: 660px) {
+      width: 100%;
+   }
 `;
 
 const overlay = css`

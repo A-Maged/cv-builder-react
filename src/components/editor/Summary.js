@@ -30,17 +30,18 @@ class Summary extends Component {
 
    render() {
       return (
-         <div className={detailsStyle}>
-            <div onClick={this.openModal} className="details">
+         <React.Fragment>
+            <div onClick={this.openModal} className={detailsStyle}>
                {this.props.summary}
             </div>
 
             {this.state.showForm && (
                <Modal classNames="popup" onClose={this.closeModal}>
                   <Form {...this.props} />
+                  <button onClick={this.closeModal}>close</button>
                </Modal>
             )}
-         </div>
+         </React.Fragment>
       );
    }
 }
