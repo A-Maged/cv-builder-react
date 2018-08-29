@@ -55,20 +55,22 @@ class Profile extends Component {
       showForm: false
    };
 
-   handleClick = () => {
-      this.setState({
-         showForm: !this.state.showForm
-      });
+   openModal = () => {
+      this.setState({ showForm: true });
+   };
+
+   closeModal = () => {
+      this.setState({ showForm: false });
    };
 
    render() {
       return (
          <div className={styles.profile}>
-            <div onClick={this.handleClick} className="details">
+            <div onClick={this.openModal} className="details">
                {this.props.name + '  ' + this.props.email}
             </div>
             {this.state.showForm && (
-               <Modal classNames={styles.popup}>
+               <Modal classNames="popup" onClose={this.closeModal}>
                   <Form {...this.props} />
                </Modal>
             )}
