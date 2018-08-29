@@ -54,6 +54,10 @@ const popup = css`
    @media (max-width: 660px) {
       width: 100%;
    }
+
+   & textarea {
+      min-height: 25vh;
+   }
 `;
 
 const overlay = css`

@@ -31,8 +31,9 @@ class Education extends Component {
 
    render() {
       return (
-         <React.Fragment>
-            <div onClick={this.openModal} className={detailsStyle}>
+         <div className={section}>
+            <div onClick={this.openModal} className="details">
+               <h4 className="title">education</h4>
                {this.props.education}
             </div>
 
@@ -42,16 +43,22 @@ class Education extends Component {
                   <button onClick={this.closeModal}>close</button>
                </Modal>
             )}
-         </React.Fragment>
+         </div>
       );
    }
 }
 
-const detailsStyle = css`
-   cursor: pointer;
-   padding: 15px;
-   margin-bottom: 10px;
-   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+const section = css`
+   .title {
+      font-size: 13px;
+      margin: 10px 0;
+   }
+   .details {
+      cursor: pointer;
+      padding: 15px;
+      margin-bottom: 25px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+   }
 `;
 
 export default WithForm(Education);

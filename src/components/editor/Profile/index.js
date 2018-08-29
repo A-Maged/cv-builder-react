@@ -65,8 +65,9 @@ class Profile extends Component {
 
    render() {
       return (
-         <div className={styles.profile}>
+         <div className={styles.section}>
             <div onClick={this.openModal} className="details">
+               <h4 className="title">Profile</h4>
                {this.props.name + '  ' + this.props.email}
             </div>
             {this.state.showForm && (
@@ -79,10 +80,5 @@ class Profile extends Component {
       );
    }
 }
-
-// ReactDOM.render(
-//    <Form {...this.props} showForm={this.state.showForm} />,
-//    document.querySelector('#popup')
-// );
 
 export default WithForm(Profile);
