@@ -27,7 +27,7 @@ class EditorSection extends Component {
             <styles.AnimateModalWrapper>
                {this.state.showForm && (
                   <Modal classNames="popup" onClose={this.closeModal}>
-                     {this.props.Form}
+                     {this.props.children}
                      <button onClick={this.closeModal}>close</button>
                   </Modal>
                )}

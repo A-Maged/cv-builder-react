@@ -3,8 +3,11 @@ import React from 'react';
 import WithForm from '../../containers/WithForm';
 import EditorSection from './EditorSection';
 
-const Form = props => {
-   return (
+const Summary = props => (
+   <EditorSection
+      title="summary"
+      details={props.summary.substring(0, 75) + '...'}
+   >
       <textarea
          onChange={props.summaryChanged}
          value={props.summary}
@@ -12,15 +15,7 @@ const Form = props => {
          placeholder="summary"
          type="text"
       />
-   );
-};
-
-const Summary = props => (
-   <EditorSection
-      title="summary"
-      details={props.summary.substring(0, 75) + '...'}
-      Form={<Form {...props} />}
-   />
+   </EditorSection>
 );
 
 export default WithForm(Summary);

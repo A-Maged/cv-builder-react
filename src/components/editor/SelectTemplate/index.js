@@ -6,7 +6,7 @@ import WithForm from '../../../containers/WithForm';
 import templates from '../../templates';
 
 const renderTemplateImages = props => {
-   let selectedTemplateId = parseInt(props.selectedTemplate, 10); // 1 state
+   let selectedTemplateId = parseInt(props.selectedTemplate, 10);
 
    return (
       <React.Fragment>

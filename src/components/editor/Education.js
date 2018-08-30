@@ -3,8 +3,11 @@ import React from 'react';
 import WithForm from '../../containers/WithForm';
 import EditorSection from './EditorSection';
 
-const Form = props => {
-   return (
+const Education = props => (
+   <EditorSection
+      title="education"
+      details={props.education.substring(0, 75) + '...'}
+   >
       <textarea
          onChange={props.educationChanged}
          value={props.education}
@@ -12,15 +15,7 @@ const Form = props => {
          placeholder="education"
          type="text"
       />
-   );
-};
-
-const Education = props => (
-   <EditorSection
-      title="education"
-      details={props.education.substring(0, 75) + '...'}
-      Form={<Form {...props} />}
-   />
+   </EditorSection>
 );
 
 export default WithForm(Education);

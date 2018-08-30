@@ -3,6 +3,12 @@ import React from 'react';
 import WithForm from '../../containers/WithForm';
 import EditorSection from './EditorSection';
 
+const Profile = props => (
+   <EditorSection title="Profile" details={props.name + '  ' + props.email}>
+      <Form {...props} />
+   </EditorSection>
+);
+
 const Form = props => {
    return (
       <div className="form">
@@ -48,13 +54,5 @@ const Form = props => {
       </div>
    );
 };
-
-const Profile = props => (
-   <EditorSection
-      title="Profile"
-      details={props.name + '  ' + props.email}
-      Form={<Form {...props} />}
-   />
-);
 
 export default WithForm(Profile);
