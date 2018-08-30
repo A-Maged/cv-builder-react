@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import WithForm from '../../../containers/WithForm';
-import * as styles from './Profile.css';
-import Modal from '../../Modal';
+import WithForm from '../../containers/WithForm';
+import EditorSection from './EditorSection';
 
 const Form = props => {
    return (
@@ -51,32 +50,13 @@ const Form = props => {
 };
 
 class Profile extends Component {
-   state = {
-      showForm: false
-   };
-
-   openModal = () => {
-      this.setState({ showForm: true });
-   };
-
-   closeModal = () => {
-      this.setState({ showForm: false });
-   };
-
    render() {
       return (
-         <div className={styles.section}>
-            <div onClick={this.openModal} className="details">
-               <h4 className="title">Profile</h4>
-               {this.props.name + '  ' + this.props.email}
-            </div>
-            {this.state.showForm && (
-               <Modal classNames="popup" onClose={this.closeModal}>
-                  <Form {...this.props} />
-                  <button onClick={this.closeModal}>close</button>
-               </Modal>
-            )}
-         </div>
+         <EditorSection
+            title="Profile"
+            details={this.props.name + '  ' + this.props.email}
+            Form={<Form {...this.props} />}
+         />
       );
    }
 }
