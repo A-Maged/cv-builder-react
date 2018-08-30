@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import WithForm from '../../containers/WithForm';
 import EditorSection from './EditorSection';
@@ -15,16 +15,12 @@ const Form = props => {
    );
 };
 
-class Education extends Component {
-   render() {
-      return (
-         <EditorSection
-            title="education"
-            details={this.props.education.substring(0, 75) + '...'}
-            Form={<Form {...this.props} />}
-         />
-      );
-   }
-}
+const Education = props => (
+   <EditorSection
+      title="education"
+      details={props.education.substring(0, 75) + '...'}
+      Form={<Form {...props} />}
+   />
+);
 
 export default WithForm(Education);

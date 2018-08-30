@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import WithForm from '../../containers/WithForm';
 import EditorSection from './EditorSection';
@@ -15,16 +15,12 @@ const Form = props => {
    );
 };
 
-class Summary extends Component {
-   render() {
-      return (
-         <EditorSection
-            title="summary"
-            details={this.props.summary.substring(0, 75) + '...'}
-            Form={<Form {...this.props} />}
-         />
-      );
-   }
-}
+const Summary = props => (
+   <EditorSection
+      title="summary"
+      details={props.summary.substring(0, 75) + '...'}
+      Form={<Form {...props} />}
+   />
+);
 
 export default WithForm(Summary);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import WithForm from '../../containers/WithForm';
 import EditorSection from './EditorSection';
@@ -49,16 +49,12 @@ const Form = props => {
    );
 };
 
-class Profile extends Component {
-   render() {
-      return (
-         <EditorSection
-            title="Profile"
-            details={this.props.name + '  ' + this.props.email}
-            Form={<Form {...this.props} />}
-         />
-      );
-   }
-}
+const Profile = props => (
+   <EditorSection
+      title="Profile"
+      details={props.name + '  ' + props.email}
+      Form={<Form {...props} />}
+   />
+);
 
 export default WithForm(Profile);
