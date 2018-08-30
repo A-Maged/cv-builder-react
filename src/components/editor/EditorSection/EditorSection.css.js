@@ -37,18 +37,18 @@ export const AnimateModalWrapper = props => (
 );
 
 const modalEnter = css`
-   opacity: 0;
+   /* opacity: 0; */
    transform: translateX(100%);
 `;
 
 const modalEnterActive = css`
    transition: all 500ms;
    transform: translateX(0);
-   opacity: 1;
+   /* opacity: 1; */
 `;
 
 const modalLeaveActive = css`
    transition: all 500ms;
    transform: translateX(100%);
-   opacity: 0;
+   /* opacity: 0; */
 `;

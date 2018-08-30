@@ -5,6 +5,15 @@ import * as styles from './SelectTemplate.css';
 import WithForm from '../../../containers/WithForm';
 import templates from '../../templates';
 
+const SelectTemplate = props => {
+   return (
+      <div className={styles.selectTemplate}>
+         <h4>select template</h4>
+         <div className="row">{renderTemplateImages(props)}</div>
+      </div>
+   );
+};
+
 const renderTemplateImages = props => {
    let selectedTemplateId = parseInt(props.selectedTemplate, 10);
 
@@ -29,15 +38,6 @@ const renderTemplateImages = props => {
             );
          })}
       </React.Fragment>
-   );
-};
-
-const SelectTemplate = props => {
-   return (
-      <div className={styles.selectTemplate}>
-         <h4>select template</h4>
-         <div className="row">{renderTemplateImages(props)}</div>
-      </div>
    );
 };
 

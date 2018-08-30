@@ -8,14 +8,6 @@ class EditorSection extends Component {
       showForm: false
    };
 
-   openModal = () => {
-      this.setState({ showForm: true });
-   };
-
-   closeModal = () => {
-      this.setState({ showForm: false });
-   };
-
    render() {
       return (
          <div className={styles.section}>
@@ -26,7 +18,7 @@ class EditorSection extends Component {
 
             <styles.AnimateModalWrapper>
                {this.state.showForm && (
-                  <Modal classNames="popup" onClose={this.closeModal}>
+                  <Modal popupClassNames="popup" onClose={this.closeModal}>
                      {this.props.children}
                      <button onClick={this.closeModal}>close</button>
                   </Modal>
@@ -35,6 +27,14 @@ class EditorSection extends Component {
          </div>
       );
    }
+
+   openModal = () => {
+      this.setState({ showForm: true });
+   };
+
+   closeModal = () => {
+      this.setState({ showForm: false });
+   };
 }
 
 export default EditorSection;
