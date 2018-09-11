@@ -1,43 +1,6 @@
 import * as actionTypes from './actionTypes';
 
-export const formNameChanged = value => ({
-   type: actionTypes.formNameChanged,
+export const formEdit = value => ({
+   type: actionTypes.formEdit,
    value
 });
-
-export const formEmailChanged = value => ({
-   type: actionTypes.formEmailChanged,
-   value
-});
-
-export const formPhoneChanged = value => ({
-   type: actionTypes.formPhoneChanged,
-   value
-});
-
-export const formSummaryChanged = value => ({
-   type: actionTypes.formSummaryChanged,
-   value
-});
-
-export const formEducationChanged = value => ({
-   type: actionTypes.formEducationChanged,
-   value
-});
-
-export const formLocationChanged = value => ({
-   type: actionTypes.formLocationChanged,
-   value
-});
-
-export const formWebsiteChanged = value => ({
-   type: actionTypes.formWebsiteChanged,
-   value
-});
-
-export const formSelectedTemplateChanged = value => {
-   return {
-      type: actionTypes.formSelectedTemplateChanged,
-      value
-   };
-};

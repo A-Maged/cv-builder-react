@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../redux/actions/actionCreators';
+import { formEdit } from '../redux/actions/actionCreators';
 
 const WithForm = WrappedComponent => {
    return class extends Component {
@@ -30,25 +30,18 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
    return {
-      nameChanged: e =>
-         dispatch(actionCreators.formNameChanged(e.target.value)),
-      emailChanged: e =>
-         dispatch(actionCreators.formEmailChanged(e.target.value)),
-      phoneChanged: e =>
-         dispatch(actionCreators.formPhoneChanged(e.target.value)),
-      summaryChanged: e =>
-         dispatch(actionCreators.formSummaryChanged(e.target.value)),
-      educationChanged: e =>
-         dispatch(actionCreators.formEducationChanged(e.target.value)),
-      locationChanged: e =>
-         dispatch(actionCreators.formLocationChanged(e.target.value)),
-      websiteChanged: e =>
-         dispatch(actionCreators.formWebsiteChanged(e.target.value)),
+      nameChanged: e => dispatch(formEdit({ name: e.target.value })),
+      emailChanged: e => dispatch(formEdit({ email: e.target.value })),
+      phoneChanged: e => dispatch(formEdit({ phone: e.target.value })),
+      summaryChanged: e => dispatch(formEdit({ summary: e.target.value })),
+      educationChanged: e => dispatch(formEdit({ education: e.target.value })),
+      locationChanged: e => dispatch(formEdit({ location: e.target.value })),
+      websiteChanged: e => dispatch(formEdit({ website: e.target.value })),
       selectedTemplateChanged: e =>
          dispatch(
-            actionCreators.formSelectedTemplateChanged(
-               e.target.getAttribute('template-id')
-            )
+            formEdit({
+               selectedTemplate: e.target.getAttribute('template-id')
+            })
          )
    };
 };

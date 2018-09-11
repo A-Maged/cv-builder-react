@@ -13,52 +13,10 @@ let initialState = {
 
 export default function formReducer(state = initialState, action) {
    switch (action.type) {
-      case actionTypes.formNameChanged:
+      case actionTypes.formEdit:
          return {
             ...state,
-            name: action.value
-         };
-
-      case actionTypes.formEmailChanged:
-         return {
-            ...state,
-            email: action.value
-         };
-
-      case actionTypes.formPhoneChanged:
-         return {
-            ...state,
-            phone: action.value
-         };
-
-      case actionTypes.formSummaryChanged:
-         return {
-            ...state,
-            summary: action.value
-         };
-
-      case actionTypes.formEducationChanged:
-         return {
-            ...state,
-            education: action.value
-         };
-
-      case actionTypes.formLocationChanged:
-         return {
-            ...state,
-            location: action.value
-         };
-
-      case actionTypes.formWebsiteChanged:
-         return {
-            ...state,
-            website: action.value
-         };
-
-      case actionTypes.formSelectedTemplateChanged:
-         return {
-            ...state,
-            selectedTemplate: action.value
+            ...action.value
          };
 
       default:

@@ -20,6 +20,10 @@ export const developer_1 = css`
    p {
       font-size: 18px;
    }
+
+   .template__website {
+      cursor: pointer;
+   }
 `;
 
 export const header = css`
