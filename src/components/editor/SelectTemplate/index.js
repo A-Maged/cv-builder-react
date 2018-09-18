@@ -15,12 +15,12 @@ const SelectTemplate = props => {
 };
 
 const renderTemplateImages = props => {
-   let selectedTemplateId = parseInt(props.selectedTemplate, 10);
+   let selectedTemplateId = Number(props.selectedTemplate);
 
    return (
       <React.Fragment>
          {templates.map(template => {
-            let templateId = parseInt(template.id, 10);
+            let templateId = Number(template.id);
 
             let isSelectedClassName =
                selectedTemplateId === templateId ? 'selected' : '';

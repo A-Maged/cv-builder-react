@@ -28,9 +28,9 @@ export const AnimateModalWrapper = props => (
       transitionEnter={true}
       transitionEnterTimeout={500}
       transitionLeave={true}
-      transitionLeaveTimeout={300}
-      transitionAppear={false}
-      transitionAppearTimeout={500}
+      transitionLeaveTimeout={500}
+      //   transitionAppear={false}
+      //   transitionAppearTimeout={500}
    >
       {props.children}
    </ReactCSSTransitionGroup>
