@@ -7,7 +7,7 @@ class StyleBtns extends Component {
       super(props);
 
       this.btnsNode = document.createElement('div');
-      this.btnsNode.setAttribute('class', styles);
+      this.btnsNode.setAttribute('class', `${styles}  style-btns`);
       this.parentNode = document.querySelector('.popup');
    }
 
@@ -24,7 +24,7 @@ class StyleBtns extends Component {
    }
 
    renderBtns = () => (
-      <div className="style-btns">
+      <React.Fragment>
          <button onClick={() => document.execCommand('bold')}>Bold</button>
          <button onClick={() => document.execCommand('Italic')}>Italic</button>
          <button onClick={() => document.execCommand('underline')}>
@@ -42,20 +42,32 @@ class StyleBtns extends Component {
          <button onClick={() => document.execCommand('insertHorizontalRule')}>
             hr
          </button>
-      </div>
+      </React.Fragment>
    );
 }
 
 const styles = css`
-   background: #fff;
-   position: fixed;
+   background: none;
+
+   position: absolute;
    top: 0;
-   left: 0;
-   width: 100%;
-   text-align: center;
+   left: -167px;
+   text-align: right;
+   text-align: -webkit-right;
 
    button {
-      margin-right: 10px;
+      display: block;
+   }
+
+   @media (max-width: 660px) {
+      & {
+         position: relative;
+         left: 0;
+
+         button {
+            display: inline-block;
+         }
+      }
    }
 `;
 
