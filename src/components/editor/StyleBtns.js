@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { css } from 'emotion';
 
 class StyleBtns extends Component {
    constructor(props) {
       super(props);
 
       this.btnsNode = document.createElement('div');
-      this.btnsNode.setAttribute('id', 'style-btns-node');
+      this.btnsNode.setAttribute('class', styles);
       this.parentNode = document.querySelector('.popup');
    }
+
    componentDidMount() {
       this.parentNode.prepend(this.btnsNode);
    }
@@ -18,10 +20,7 @@ class StyleBtns extends Component {
    }
 
    render() {
-      return ReactDOM.createPortal(
-         <div>{this.renderBtns()}</div>,
-         this.btnsNode
-      );
+      return ReactDOM.createPortal(this.renderBtns(), this.btnsNode);
    }
 
    renderBtns = () => (
@@ -46,5 +45,18 @@ class StyleBtns extends Component {
       </div>
    );
 }
+
+const styles = css`
+   background: #fff;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   text-align: center;
+
+   button {
+      margin-right: 10px;
+   }
+`;
 
 export default StyleBtns;
