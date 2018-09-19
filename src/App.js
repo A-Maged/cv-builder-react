@@ -13,10 +13,12 @@ class App extends Component {
    render() {
       return (
          <div className={styles.app}>
-            <Nav />
             <div className={styles.page}>
                <Routes />
             </div>
+
+            {/* keep Nav under Routes to avoid z-index issues  */}
+            <Nav />
          </div>
       );
    }

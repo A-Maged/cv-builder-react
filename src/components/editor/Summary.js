@@ -1,42 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import WithForm from '../../containers/WithForm';
 import EditorSection from './EditorSection';
+import TextField from './TextField';
 
-const Summary = props => {
-   const test = e => {
-      let allText = e.target.value,
-         selectedText = window.getSelection().toString(),
-         start = e.target.selectionStart,
-         end = e.target.selectionEnd;
-
-      if (selectedText === '') return;
-
-      // constructe the new string
-      let newTxt =
-         allText.substring(0, start) +
-         selectedText.bold() +
-         allText.substring(end);
-
-      props.summaryChanged(newTxt);
-      console.log(newTxt);
+class Summary extends Component {
+   handleChange = e => {
+      this.props.summaryChanged(e.target.value);
    };
 
-   return (
-      <EditorSection
-         title="summary"
-         details={props.summary.substring(0, 75) + '...'}
-      >
-         <textarea
-            onChange={props.summaryChanged}
-            onSelect={test}
-            value={props.summary}
-            className="form__summary"
-            placeholder="summary"
-            type="text"
-         />
-      </EditorSection>
-   );
-};
+   render() {
+      return (
+         <EditorSection
+            title="summary"
+            details={this.props.summary.substring(0, 75) + '...'}
+         >
+            <TextField
+               {...this.props}
+               html={this.props.summary}
+               classNames="form__summary"
+               handleChange={this.handleChange}
+            />
+         </EditorSection>
+      );
+   }
+}
 
 export default WithForm(Summary);

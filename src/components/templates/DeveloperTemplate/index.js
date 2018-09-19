@@ -16,11 +16,11 @@ const DeveloperTemplate = props => {
          <div className="template__sections">
             <div className="template__summary">
                <h4>summary</h4>
-               <p>{props.summary}</p>
+               <p dangerouslySetInnerHTML={{ __html: props.summary }} />
             </div>
             <div className="template__education">
                <h4>education</h4>
-               <p>{props.education}</p>
+               <p dangerouslySetInnerHTML={{ __html: props.education }} />
             </div>
          </div>
       </div>

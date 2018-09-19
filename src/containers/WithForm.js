@@ -33,14 +33,11 @@ const mapDispatchToProps = dispatch => {
       nameChanged: e => dispatch(formEdit({ name: e.target.value })),
       emailChanged: e => dispatch(formEdit({ email: e.target.value })),
       phoneChanged: e => dispatch(formEdit({ phone: e.target.value })),
-      summaryChanged: e => {
-         if (e.target) {
-            dispatch(formEdit({ summary: e.target.value }));
-         } else {
-            dispatch(formEdit({ summary: e }));
-         }
+      summaryChanged: value => {
+         dispatch(formEdit({ summary: value }));
       },
-      educationChanged: e => dispatch(formEdit({ education: e.target.value })),
+
+      educationChanged: value => dispatch(formEdit({ education: value })),
       locationChanged: e => dispatch(formEdit({ location: e.target.value })),
       websiteChanged: e => dispatch(formEdit({ website: e.target.value })),
       selectedTemplateChanged: e =>

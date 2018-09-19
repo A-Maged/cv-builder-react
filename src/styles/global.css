@@ -16,12 +16,40 @@ a {
    text-decoration: none;
 }
 
+li {
+   text-align: left;
+}
+
+.btn,
+button {
+   border: none;
+   background: blue;
+   padding: 18px 25px;
+   color: white;
+   text-transform: uppercase;
+   font-weight: bold;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+.btn,
+button:hover {
+   background: #555;
+   transform: translateY(-3px);
+}
+
 [class*='form__'] {
    display: block;
    width: 100%;
    margin: 15px 0;
    padding: 10px;
    color: #333;
+   max-width: 400px;
+}
+
+input:not([type='submit']),
+.form__input {
+   background-color: #d6eafa;
+   border: none;
 }
 
 .popup {

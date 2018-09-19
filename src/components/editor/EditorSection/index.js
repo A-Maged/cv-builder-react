@@ -13,7 +13,7 @@ class EditorSection extends Component {
          <div className={styles.section}>
             <div onClick={this.openModal} className="details">
                <h4 className="title">{this.props.title}</h4>
-               <p>{this.props.details}</p>
+               <p dangerouslySetInnerHTML={{ __html: this.props.details }} />
             </div>
 
             <styles.AnimateModalWrapper>
