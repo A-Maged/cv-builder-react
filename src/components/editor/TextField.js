@@ -1,34 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ContentEditable from 'react-contenteditable';
 
-const TextField = props => {
-   return (
-      <React.Fragment>
-         <button onClick={() => document.execCommand('bold')}>Bold</button>
-         <button onClick={() => document.execCommand('Italic')}>Italic</button>
-         <button onClick={() => document.execCommand('underline')}>
-            underline
-         </button>
-         <button onClick={() => document.execCommand('strikeThrough')}>
-            strikeThrough
-         </button>
-         <button onClick={() => document.execCommand('insertOrderedList')}>
-            #1
-         </button>
-         <button onClick={() => document.execCommand('insertUnorderedList')}>
-            *
-         </button>
-         <button onClick={() => document.execCommand('insertHorizontalRule')}>
-            hr
-         </button>
-         <ContentEditable
-            html={props.html}
-            onChange={props.handleChange}
-            className={`form__input ${props.classNames}`}
-            placeholder="summary"
-         />
-      </React.Fragment>
-   );
-};
+import StyleBtns from './StyleBtns';
+
+class TextField extends Component {
+   state = {
+      showBtns: false
+   };
+
+   handleFocus = () => {
+      this.setState({ showBtns: true });
+      document.removeEventListener('click', this.hideStyleBtns);
+   };
+
+   handleBlur = () => {
+      document.addEventListener('click', this.hideStyleBtns);
+   };
+
+   componentWillUnmount() {
+      document.removeEventListener('click', this.hideStyleBtns);
+   }
+
+   hideStyleBtns = e => {
+      let show = e.target.parentNode.classList.contains('style-btns');
+      if (!show) {
+         this.setState({ showBtns: false });
+      }
+   };
+
+   render() {
+      return (
+         <React.Fragment>
+            {this.state.showBtns && <StyleBtns />}
+
+            <ContentEditable
+               html={this.props.html}
+               onChange={this.props.handleChange}
+               onFocus={this.handleFocus}
+               onBlur={this.handleBlur}
+               className={`form__input form__input__wysiwyg ${
+                  this.props.classNames
+               }`}
+               placeholder="summary"
+            />
+         </React.Fragment>
+      );
+   }
+}
 
 export default TextField;
