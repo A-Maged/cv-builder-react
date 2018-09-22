@@ -1,83 +1,62 @@
 import React, { Component } from 'react';
 
 import WithForm from '../../containers/WithForm';
-import Card from '../Card';
-import SideModal from '../Modal/SideModal';
+import SectionCard from './SectionCard';
 
 class ProfileCard extends Component {
-   state = {
-      showForm: false
-   };
-
-   openModal = () => {
-      this.setState({ showForm: true });
-   };
-
-   closeModal = () => {
-      this.setState({ showForm: false });
-   };
-
    render() {
       return (
-         <React.Fragment>
-            <Card
-               onClick={this.openModal}
-               title="Profile"
-               details={this.props.name + '  ' + this.props.email}
-            />
-
-            <SideModal show={this.state.showForm} closeModal={this.closeModal}>
-               <Form {...this.props} />
-            </SideModal>
-         </React.Fragment>
+         <SectionCard
+            title="Profile"
+            details={this.props.name + '  ' + this.props.email}
+            render={this.Form}
+         />
       );
    }
-}
 
-const Form = props => {
-   return (
+   Form = () => (
       <div className="form">
          <input
-            onChange={props.nameChanged}
-            value={props.name}
+            onChange={this.props.nameChanged}
+            value={this.props.name}
             className="form__name"
             placeholder="name"
             type="text"
          />
 
          <input
-            onChange={props.emailChanged}
-            value={props.email}
+            onChange={this.props.emailChanged}
+            value={this.props.email}
             className="form__email"
             placeholder="email"
             type="email"
          />
 
          <input
-            onChange={props.phoneChanged}
-            value={props.phone}
+            onChange={this.props.phoneChanged}
+            value={this.props.phone}
             className="form__phone"
             placeholder="phone"
             type="tel"
          />
 
          <input
-            onChange={props.locationChanged}
-            value={props.location}
+            onChange={this.props.locationChanged}
+            value={this.props.location}
             className="form__location"
             placeholder="location"
             type="text"
          />
 
          <input
-            onChange={props.websiteChanged}
-            value={props.website}
+            onChange={this.props.websiteChanged}
+            value={this.props.website}
             className="form__website"
             placeholder="website"
             type="text"
          />
       </div>
    );
-};
+}
 
 export default WithForm(ProfileCard);
