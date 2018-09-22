@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import WithForm from '../../containers/WithForm';
-import EditorSection from './EditorSection';
+import Card from '../Card';
+import SideModal from '../Modal/SideModal';
 
-const Profile = props => (
-   <EditorSection title="Profile" details={props.name + '  ' + props.email}>
-      <Form {...props} />
-   </EditorSection>
-);
+class ProfileCard extends Component {
+   state = {
+      showForm: false
+   };
+
+   openModal = () => {
+      this.setState({ showForm: true });
+   };
+
+   closeModal = () => {
+      this.setState({ showForm: false });
+   };
+
+   render() {
+      return (
+         <React.Fragment>
+            <Card
+               onClick={this.openModal}
+               title="Profile"
+               details={this.props.name + '  ' + this.props.email}
+            />
+
+            <SideModal show={this.state.showForm} closeModal={this.closeModal}>
+               <Form {...this.props} />
+            </SideModal>
+         </React.Fragment>
+      );
+   }
+}
 
 const Form = props => {
    return (
@@ -55,4 +80,4 @@ const Form = props => {
    );
 };
 
-export default WithForm(Profile);
+export default WithForm(ProfileCard);

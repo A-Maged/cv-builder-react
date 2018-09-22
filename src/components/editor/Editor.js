@@ -1,17 +1,17 @@
 import React from 'react';
-
-import Profile from './Profile';
-import Summary from './Summary';
-import Education from './Education';
 import { css } from 'emotion';
+
+import ProfileCard from './ProfileCard';
+import SummaryCard from './SummaryCard';
+import EducationCard from './EducationCard';
 
 const Editor = () => {
    return (
       <div className={editorCss}>
          <h4>edit your info</h4>
-         <Profile />
-         <Summary />
-         <Education />
+         <ProfileCard />
+         <SummaryCard />
+         <EducationCard />
       </div>
    );
 };
